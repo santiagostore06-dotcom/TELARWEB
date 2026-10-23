@@ -35,8 +35,10 @@ Español neutro, oraciones cortas, voz activa, sentence case, sin relleno. Prime
 
 ## Dónde viven los archivos
 
-La copia de trabajo es `/home/claude/telar`, pero las tareas programadas corren en sesiones nuevas donde esa carpeta NO existe. La copia durable está en el Proyecto BLOG, bajo `telar/` (ver `docs/RESTAURAR.md`). Al terminar, guarda los archivos cambiados de vuelta en el Proyecto con la misma ruta.
+Repositorio: `santiagostore06-dotcom/TELARWEB` en GitHub. Respaldo en el Proyecto BLOG de claude.ai, carpeta `telar/` (ver `docs/RESTAURAR.md`).
+
+Las tareas programadas corren en sesiones nuevas sin archivos locales: deben clonar el repositorio o restaurar desde el Proyecto, y guardar los cambios de vuelta en ambos.
 
 ## Despliegue
 
-Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Detalles y limitaciones en `docs/OPERACIONES.md`.
+Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Pasos y limitaciones en `docs/OPERACIONES.md`. Publicar solo con aprobación del propietario.

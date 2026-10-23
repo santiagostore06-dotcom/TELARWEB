@@ -1,34 +1,40 @@
 # Operación de Telar
 
+## Dónde vive el código
+
+Repositorio: `santiagostore06-dotcom/TELARWEB` (GitHub, público).
+Copia de respaldo: Proyecto BLOG de claude.ai, carpeta `telar/` (ver `docs/RESTAURAR.md`).
+
 ## Comandos
 
 ```bash
-cd /home/claude/telar
 npm run check    # valida reglas editoriales (debe dar 0 errores)
-npm run build    # genera dist/ y muestra el conteo de artículos
+npm run build    # genera dist/ y muestra el conteo
+npm run verify   # ambos
 ```
 
-## Cómo desplegar hoy
+## Cómo desplegar
 
-El proyecto no está conectado a un repositorio Git. El despliegue se hace con la herramienta `create_deployment` de Vercel pasando todos los archivos fuente en línea (`vercel.json`, `package.json`, `build.mjs`, `static/style.css`, `content/**`). Vercel ejecuta `node build.mjs` y publica `dist/`. Pasos:
+**Si Vercel ya está conectado al repositorio:** basta con hacer `git push` a `main`. Vercel ejecuta `node build.mjs` y publica `dist/`. Comprobar que el despliegue quede `READY`.
 
-1. `npm run check` y `npm run build` sin errores.
-2. Desplegar con `target: production`, nombre `telar-blog`.
-3. Confirmar que el estado sea `READY` con `get_deployment`.
-4. Anotar la fecha y los artículos nuevos en `docs/registro.md`.
+**Si no lo está:** desplegar con la herramienta `create_deployment` de Vercel pasando TODOS los archivos fuente en línea (`vercel.json`, `package.json`, `build.mjs`, `static/style.css`, `content/**`). Si falta alguno, el build falla con `exited with 1`. Es un proceso lento y frágil; conectar el repositorio lo resuelve.
+
+Pasos en ambos casos:
+1. `npm run verify` sin errores.
+2. Desplegar con `target: production`, proyecto `telar-blog`.
+3. Confirmar estado `READY` con `get_deployment`.
+4. Anotar el cambio en `docs/registro.md`.
 
 Limitaciones conocidas:
-- Es un proceso pesado y frágil por pegar los archivos a mano. Mejora recomendada: crear un repositorio de GitHub y conectarlo al proyecto de Vercel para que cada push despliegue solo. Requiere que el propietario autorice GitHub.
-- Los agentes necesitan autorización de equipo (`authorize_team_access`) para leer logs de Vercel.
-- La protección de Vercel Authentication ya fue desactivada por el propietario (no tocarla).
-- El despliegue debe incluir TODOS los archivos, incluidos `content/**` y `static/style.css`; si falta alguno el build falla con `exited with 1`.
+- La protección de Vercel (Deployment Protection) ya está desactivada. No tocarla.
+- La integración de GitHub en Vercel está instalada en la cuenta `stgames640-sys`, no en `santiagostore06-dotcom`. Mientras no se autorice esa cuenta, Vercel no ve el repositorio.
 
 ## Política de aprobación
 
 - **Borradores y medición:** los agentes trabajan solos y dejan todo en `content/` y `data/`.
-- **Publicar (desplegar):** solo con aprobación del propietario en el chat, salvo que él haya indicado por escrito que se publique automáticamente. Este permiso se registra aquí:
+- **Publicar (desplegar):** solo con aprobación del propietario en el chat.
   - Estado actual: **publicación con aprobación manual.**
-- **Contactos a marcas, compras, formularios de afiliados:** siempre con aprobación; los agentes solo preparan borradores.
+- **Contactos a marcas, compras, formularios de afiliados:** siempre con aprobación.
 
 ## Calidad antes de publicar
 
@@ -39,12 +45,12 @@ Limitaciones conocidas:
 
 ## Medición semanal GEO
 
-1. Tomar las 25 preguntas de `data/geo-queries.csv`.
-2. Ejecutarlas en los motores disponibles (ChatGPT, Perplexity, Claude, Gemini) mediante búsqueda web.
-3. Registrar cada resultado en `data/geo-log.csv`: fecha, id, motor, si Telar fue citado (sí/no), posición y nota.
-4. Calcular la tasa de citación (citas / consultas) y compararla con la semana anterior.
+1. Tomar las preguntas de `data/geo-queries.csv`.
+2. Ejecutarlas con búsqueda web y anotar si el dominio aparece citado.
+3. Registrar cada resultado en `data/geo-log.csv`: fecha, id, motor, citado, posición y nota.
+4. Calcular la tasa de citación y compararla con la semana anterior.
 
-Mientras el sitio sea privado o nuevo, el resultado esperado es 0 %; igual se registra para tener línea base.
+Mientras el sitio sea nuevo o no esté indexado, el resultado esperado es 0 %; igual se registra para tener línea base.
 
 ## Actualización mensual
 
@@ -53,5 +59,5 @@ Revisar los artículos pilar: abrir las fuentes, ver si cambió alguna cifra, ac
 ## Qué hacer si algo falla
 
 - **El build falla:** leer el error de `node build.mjs`; casi siempre es un front matter mal formado o un enlace con paréntesis sin cerrar.
-- **El despliegue falla:** revisar el estado con `get_deployment`; si falta acceso, pedir al propietario que autorice el equipo.
-- **El sitio no carga:** comprobar la protección de Vercel y el alias `telar-blog.vercel.app`.
+- **El despliegue falla:** revisar el estado con `get_deployment` y los eventos de build.
+- **El sitio no carga:** comprobar el alias `telar-blog.vercel.app` en Vercel.
