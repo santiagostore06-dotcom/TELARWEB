@@ -1,0 +1,10 @@
+{
+  "name": "telar-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node scripts/check.mjs",
+    "verify": "node scripts/check.mjs && node build.mjs"
+  }
+}

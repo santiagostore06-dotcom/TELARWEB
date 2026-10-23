@@ -1,0 +1,42 @@
+# Telar: instrucciones del proyecto (leer primero)
+
+Telar es un blog estático en español (LATAM) sobre IA y automatización. Meta: que ChatGPT, Claude y Perplexity lo citen, y monetizarlo con afiliados y patrocinios. Estrategia completa: `docs/ESTRATEGIA.md`. Operación: `docs/OPERACIONES.md`.
+
+## Reglas que no se rompen
+
+1. **Toda cifra lleva fuente enlazada.** Si no puedes verificarla con una búsqueda, no la escribas. Si la fuente tiene interés comercial, dilo.
+2. **Nada inventado:** ni cifras de audiencia, ni tarifas, ni pruebas de herramientas que no se usaron, ni citas.
+3. **Citas textuales:** máximo una por fuente y menos de 15 palabras; el resto se parafrasea. No copiar artículos.
+4. **Enlaces comerciales:** marcar afiliados y patrocinios con aviso visible y `rel="sponsored"`. Hoy no hay afiliados activos; no escribir lo contrario.
+5. **No publicar datos personales del propietario.** El único correo público autorizado es `webtelar@gmail.com` (contacto del sitio). Nunca publicar openforge18@gmail.com ni santiagostore.06@gmail.com.
+6. **Sin compras, envíos de mensajes a marcas, formularios de afiliados ni cambios de seguridad** sin aprobación del propietario en el chat.
+7. **No cambiar la protección de Vercel:** la desactiva el propietario.
+
+## Estructura
+
+- `content/articulos/*.md`: artículos (front matter: title, description, date, opcional updated, affiliate: si).
+- `content/paginas/*.md`: páginas fijas.
+- `static/style.css`: estilos. `build.mjs`: generador. `dist/`: salida (no editar).
+- `scripts/check.mjs`: validador. `data/`: medición GEO.
+- `docs/`: estrategia, operación, agentes, calendario.
+
+## Flujo de un artículo
+
+1. Elegir tema de `docs/calendario-editorial.md`.
+2. Buscar fuentes actuales (varias búsquedas) y anotar enlaces.
+3. Escribir con la plantilla de `docs/plantilla-articulo.md`.
+4. `npm run check` y `npm run build` deben pasar.
+5. Registrar el tema como hecho en el calendario.
+6. Desplegar según `docs/OPERACIONES.md` solo si el propietario lo aprobó.
+
+## Estilo
+
+Español neutro, oraciones cortas, voz activa, sentence case, sin relleno. Primero la respuesta, después la explicación. Los límites y lo que no se sabe van a la vista.
+
+## Dónde viven los archivos
+
+La copia de trabajo es `/home/claude/telar`, pero las tareas programadas corren en sesiones nuevas donde esa carpeta NO existe. La copia durable está en el Proyecto BLOG, bajo `telar/` (ver `docs/RESTAURAR.md`). Al terminar, guarda los archivos cambiados de vuelta en el Proyecto con la misma ruta.
+
+## Despliegue
+
+Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Detalles y limitaciones en `docs/OPERACIONES.md`.
