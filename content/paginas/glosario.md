@@ -43,6 +43,9 @@ Tipo de dato estructurado que marca una página con preguntas y respuestas.
 ### Tasa de citación
 Porcentaje de consultas de una lista en las que un motor de IA cita tu sitio como fuente.
 
+### Desvío (deflection)
+En atención al cliente, porcentaje de conversaciones que no llegaron a un agente humano. No equivale a resolución: incluye a quien se rindió.
+
 ### Programa de afiliados
 Acuerdo por el cual una empresa paga una comisión a quien le envía clientes mediante un enlace propio.
 

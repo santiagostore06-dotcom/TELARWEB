@@ -8,6 +8,7 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] robots.txt y llms.txt: qué sirve de verdad (2026-10-22)
 - [x] Adopción de IA en LATAM en 2026: qué dicen los datos (2026-10-22)
 - [x] Programas de afiliados de herramientas de IA: cómo elegir (2026-10-22)
+- [x] Asistentes de IA para atención al cliente: qué pueden y qué no (2026-10-23)
 
 ## Pendientes (en este orden)
 
@@ -22,7 +23,6 @@ Pilar 2, IA y automatización para pymes
 - [ ] Privacidad al usar IA en el trabajo: qué datos no compartir y política mínima
 
 Pilar 3, herramientas y flujos
-- [ ] Asistentes de IA para atención al cliente: qué pueden y qué no
 - [ ] Cómo automatizar un flujo de facturación o cotizaciones paso a paso (solo con herramientas probadas)
 - [ ] Prompts que ahorran tiempo en tareas administrativas, con ejemplos
 

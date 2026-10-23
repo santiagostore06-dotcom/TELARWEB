@@ -21,6 +21,12 @@ description: Cómo gana dinero Telar, cómo se marcan los enlaces de afiliado y 
 
 Telar se elabora con ayuda de inteligencia artificial bajo supervisión humana. Las afirmaciones factuales se apoyan en fuentes públicas enlazadas. Aun así, pueden aparecer errores: si ves uno, avísanos y lo corregimos con fecha de actualización.
 
+## Qué medimos de tu visita
+
+Telar usa la analítica de Vercel, la empresa que aloja el sitio, para contar visitas y saber qué páginas se leen. No usa cookies, no te sigue entre distintos sitios web y no recoge tu nombre ni tu correo. Solo nos sirve para decidir sobre qué escribir.
+
+Cuando publiquemos cifras de audiencia, por ejemplo en la página para patrocinadores, saldrán de ahí y llevarán su fecha.
+
 ## Correcciones
 
 Cuando corregimos un error sustancial, lo indicamos en el artículo con la fecha de actualización.

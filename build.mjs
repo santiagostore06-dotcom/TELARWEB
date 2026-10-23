@@ -147,6 +147,7 @@ ${body}
     <p class="chico">Algunos enlaces pueden ser de afiliado: si compras, Telar puede recibir una comisión sin costo extra para ti. Lee la <a href="/transparencia/">política de transparencia</a>. Contenido elaborado con ayuda de IA y supervisión humana.</p>
   </div>
 </footer>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>`;
 }
@@ -206,7 +207,7 @@ const principios = [
   ['Los límites, a la vista', 'Si una muestra es pequeña o una cifra es global, lo escribimos junto al dato.'],
   ['Transparencia sobre la IA y el dinero', 'Decimos cómo se produce el contenido y marcamos todo enlace de afiliado o patrocinio.'],
 ];
-const glosa = [['GEO', 'Optimización para que los motores de IA citen tu contenido.'], ['llms.txt', 'Propuesta de archivo con un resumen del sitio para modelos de lenguaje.'], ['Comisión recurrente', 'Pago periódico mientras el cliente referido siga suscrito.']];
+const glosa = [['GEO', 'Optimización para que los motores de IA citen tu contenido.'], ['Desvío', 'Conversaciones que no llegaron a un humano. No es lo mismo que resolución.'], ['Comisión recurrente', 'Pago periódico mientras el cliente referido siga suscrito.']];
 // Índice de preguntas reales: ayuda al lector y a los motores de IA a encontrar la respuesta exacta.
 const preguntas = articles.flatMap((a) => a.faq.map((q) => ({ q: q.q, href: `/blog/${a.slug}/#${q.id}`, pilar: a.pilar }))).slice(0, 10);
 put('index.html', layout({
@@ -263,6 +264,6 @@ Sitemap: ${SITE}/sitemap.xml
 const urls = ['/', '/blog/', '/temas/', ...Object.keys(PILARES).map((k) => `/temas/${k}/`), ...pageList.map((p) => `/${p}/`), ...articles.map((a) => `/blog/${a.slug}/`)];
 put('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 put('rss.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>${NAME}</title><link>${SITE}</link><description>${esc(TAGLINE)}</description><language>es</language>\n${articles.map((a) => `<item><title>${esc(a.title)}</title><link>${SITE}/blog/${a.slug}/</link><guid>${SITE}/blog/${a.slug}/</guid><pubDate>${new Date(a.date + 'T12:00:00Z').toUTCString()}</pubDate><description>${esc(a.description)}</description></item>`).join('\n')}\n</channel></rss>\n`);
-put('llms.txt', `# ${NAME}\n\n> ${TAGLINE}. Blog en español para LATAM. Cada dato cita su fuente.\n\n## Artículos\n\n${articles.map((a) => `- [${a.title}](${SITE}/blog/${a.slug}/): ${a.description}`).join('\n')}\n\n## Temas\n\n${Object.keys(PILARES).map((k) => `- [${PILARES[k].n}](${SITE}/temas/${k}/): ${PILARES[k].d}`).join('\n')}\n\n## Preguntas frecuentes respondidas\n\n${preguntas.map((p) => `- [${p.q}](${SITE}${p.href})`).join('\n')}\n\n## Información\n\n- [Recursos](${SITE}/recursos/): lista de verificación GEO\n- [Glosario](${SITE}/glosario/): términos de IA, GEO y afiliados\n- [Sobre Telar](${SITE}/sobre-telar/): quién publica y cómo se trabaja\n- [Transparencia](${SITE}/transparencia/): afiliados, patrocinios y política editorial\n- [Patrocina](${SITE}/patrocina/): formatos de colaboración\n- [Contacto](${SITE}/contacto/): ${EMAIL}\n`);
+put('llms.txt', `# ${NAME}\n\n> ${TAGLINE}. Blog en español para LATAM. Cada dato cita su fuente.\n\n## Artículos\n\n${articles.map((a) => `- [${a.title}](${SITE}/blog/${a.slug}/): ${a.description}`).join('\n')}\n\n## Temas\n\n${Object.keys(PILARES).map((k) => `- [${PILARES[k].n}](${SITE}/temas/${k}/): ${PILARES[k].d}`).join('\n')}\n\n## Preguntas frecuentes respondidas\n\n${preguntas.map((p) => `- [${p.q}](${SITE}${p.href})`).join('\n')}\n\n## Información\n\n- [Recursos](${SITE}/recursos/): lista de verificación GEO\n- [Glosario](${SITE}/glosario/): términos de IA, GEO y afiliados\n- [Sobre Telar](${SITE}/sobre-telar/): quién publica y cómo se trabaja\n- [Transparencia](${SITE}/transparencia/): afiliados, patrocinios, analítica y política editorial\n- [Patrocina](${SITE}/patrocina/): formatos de colaboración\n- [Contacto](${SITE}/contacto/): ${EMAIL}\n`);
 put('404.html', layout({ title: 'Página no encontrada', desc: 'La página que buscas no existe.', path: '/404', body: `<section class="art solo"><h1>No encontramos esa página</h1><div class="cuerpo"><p>Puede que el enlace haya cambiado. Vuelve al <a href="/">inicio</a>, mira los <a href="/temas/">temas</a> o todos los <a href="/blog/">artículos</a>.</p></div></section>` }));
 console.log(`OK: ${articles.length} artículos, ${pageList.length} páginas, ${preguntas.length} preguntas indexadas, sitio ${SITE}`);
