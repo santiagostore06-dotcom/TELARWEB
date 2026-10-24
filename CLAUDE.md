@@ -11,6 +11,7 @@ Telar es un blog estático en español (LATAM) sobre IA y automatización. Meta:
 5. **No publicar datos personales del propietario.** El único correo público autorizado es `webtelar@gmail.com` (contacto del sitio). Nunca publicar openforge18@gmail.com ni santiagostore.06@gmail.com.
 6. **Sin compras, envíos de mensajes a marcas, formularios de afiliados ni cambios de seguridad** sin aprobación del propietario en el chat.
 7. **No cambiar la protección de Vercel:** la desactiva el propietario.
+8. **Si un dato no se puede verificar, no se publica.** Ante la duda, el artículo queda en borrador y se avisa. La publicación es automática, así que esta regla es la única red de seguridad.
 
 ## Estructura
 
@@ -41,4 +42,6 @@ Las tareas programadas corren en sesiones nuevas sin archivos locales: deben clo
 
 ## Despliegue
 
-Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Pasos y limitaciones en `docs/OPERACIONES.md`. Publicar solo con aprobación del propietario.
+Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Pasos y limitaciones en `docs/OPERACIONES.md`.
+
+**Publicación automática desde el 23 de octubre de 2026,** autorizada por el propietario en el chat. Los agentes publican sin pedir permiso y después informan. Sigue vigente la regla 8: lo que no se puede verificar no sale.

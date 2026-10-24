@@ -32,8 +32,10 @@ Limitaciones conocidas:
 ## Política de aprobación
 
 - **Borradores y medición:** los agentes trabajan solos y dejan todo en `content/` y `data/`.
-- **Publicar (desplegar):** solo con aprobación del propietario en el chat.
-  - Estado actual: **publicación con aprobación manual.**
+- **Publicar (desplegar):** automático.
+  - Estado actual: **publicación automática**, autorizada por el propietario el 23 de octubre de 2026. Los agentes despliegan y después informan.
+  - La red de seguridad es la verificación previa: si una cifra clave no se confirma abriendo su fuente, o si el artículo no reúne 3 fuentes sólidas, queda en borrador y se avisa.
+  - La revisión mensual comprueba los artículos ya publicados contra sus fuentes y corrige lo que haga falta.
 - **Contactos a marcas, compras, formularios de afiliados:** siempre con aprobación.
 
 ## Calidad antes de publicar
@@ -42,6 +44,10 @@ Limitaciones conocidas:
 - Cada cifra verificada contra su fuente (abrir la fuente, no confiar en la memoria).
 - Mínimo 3 enlaces de fuentes por artículo, 3 preguntas frecuentes, respuesta corta arriba.
 - Sin afirmaciones de uso de una herramienta que no se probó.
+
+## Ritmo de publicación
+
+Un artículo nuevo los lunes, miércoles y viernes. La tarea programada analiza primero las tendencias de IA del momento con varias búsquedas y elige el tema a partir de ahí, cruzándolo con el calendario editorial para no repetir.
 
 ## Medición semanal GEO
 

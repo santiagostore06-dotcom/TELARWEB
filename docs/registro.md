@@ -11,3 +11,4 @@
 | 2026-10-23 | Rediseño v4: interfaz oscura tipo producto, Instrument Sans + Inter, telar animado en la portada, tarjetas con glow, lista de preguntas dentro de la guía destacada | Desplegado en producción (READY) |
 | 2026-10-23 | Artículo nuevo: asistentes de IA para atención al cliente (pilar herramientas), con 4 fuentes verificadas | Publicado |
 | 2026-10-23 | Analítica de Vercel activada en el sitio y declarada en la página de transparencia | Publicado |
+| 2026-10-24 | Publicación automática autorizada. Tarea de artículos reconfigurada: lunes, miércoles y viernes, eligiendo tema desde las tendencias del momento | Hecho |
