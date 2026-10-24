@@ -15,19 +15,19 @@ npm run verify   # ambos
 
 ## Cómo desplegar
 
-**Si Vercel ya está conectado al repositorio:** basta con hacer `git push` a `main`. Vercel ejecuta `node build.mjs` y publica `dist/`. Comprobar que el despliegue quede `READY`.
+**Camino normal (integración activa):** el proyecto `telar-blog` de Vercel está conectado a `santiagostore06-dotcom/TELARWEB`, rama `main`. Basta con hacer `git push origin main`. Vercel ejecuta `node build.mjs`, publica `dist/` y crea un despliegue de producción con el commit como origen.
 
-**Si no lo está:** desplegar con la herramienta `create_deployment` de Vercel pasando TODOS los archivos fuente en línea (`vercel.json`, `package.json`, `build.mjs`, `static/style.css`, `content/**`). Si falta alguno, el build falla con `exited with 1`. Es un proceso lento y frágil; conectar el repositorio lo resuelve.
-
-Pasos en ambos casos:
+Pasos:
 1. `npm run verify` sin errores.
-2. Desplegar con `target: production`, proyecto `telar-blog`.
-3. Confirmar estado `READY` con `get_deployment`.
+2. `git add -A`, commit descriptivo en español y `git push origin main`.
+3. Confirmar con Vercel que existe un despliegue de producción para ese commit (`list_deployments` con `projectId` `prj_FSzeSqiKhYemN5XojiAvGoSd7MqN`, comparando `meta.githubCommitSha`) y que su estado sea `READY`.
 4. Anotar el cambio en `docs/registro.md`.
 
+**Respaldo (solo si el push falla o Vercel no crea el despliegue en unos 5 minutos):** desplegar con `create_deployment` pasando TODOS los archivos fuente en línea (`vercel.json`, `package.json`, `build.mjs`, `scripts/check.mjs`, `static/style.css`, `content/**`). Target `production`, proyecto `telar-blog`. Si falta uno, el build falla con `exited with 1`. Anotar en `docs/registro.md` que se usó el respaldo.
+
 Limitaciones conocidas:
-- La protección de Vercel (Deployment Protection) ya está desactivada. No tocarla.
-- La integración de GitHub en Vercel está instalada en la cuenta `stgames640-sys`, no en `santiagostore06-dotcom`. Mientras no se autorice esa cuenta, Vercel no ve el repositorio.
+- La protección de Vercel (Deployment Protection) está desactivada. No tocarla.
+- Si la conexión con GitHub deja de funcionar, la causa suele ser la integración de la cuenta de Vercel. Revisar Settings → Git en el proyecto.
 
 ## Política de aprobación
 
