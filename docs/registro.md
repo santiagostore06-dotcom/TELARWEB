@@ -12,3 +12,4 @@
 | 2026-10-23 | Artículo nuevo: asistentes de IA para atención al cliente (pilar herramientas), con 4 fuentes verificadas | Publicado |
 | 2026-10-23 | Analítica de Vercel activada en el sitio y declarada en la página de transparencia | Publicado |
 | 2026-10-24 | Publicación automática autorizada. Tarea de artículos reconfigurada: lunes, miércoles y viernes, eligiendo tema desde las tendencias del momento | Hecho |
+| 2026-10-26 | Artículo de Claude Duet publicado vía git push tras adjuntar el repo a la sesión (add_repo). Datos clave verificados contra fuentes | Publicado |
