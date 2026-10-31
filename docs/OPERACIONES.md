@@ -23,6 +23,8 @@ Pasos:
 3. Confirmar con Vercel que existe un despliegue de producción para ese commit (`list_deployments` con `projectId` `prj_FSzeSqiKhYemN5XojiAvGoSd7MqN`, comparando `meta.githubCommitSha`) y que su estado sea `READY`.
 4. Anotar el cambio en `docs/registro.md`.
 
+**Camino para tareas programadas (sesiones sin supervisión):** estas sesiones no tienen `add_repo` y no pueden subir a `main`. Suben a una rama `claude/articulo-AAAA-MM-DD` (o `claude/revision-AAAA-MM-DD`). La acción `.github/workflows/publicar-articulos.yml` pone la rama al día con `main`, comprueba que solo cambian `content/articulos/*.md`, `docs/registro.md`, `docs/calendario-editorial.md` o `data/geo-log.csv`, ejecuta `npm run verify` y, si pasa, la fusiona en `main` y borra la rama. Vercel publica el push a `main`. Si la rama toca otros archivos (código, estilos, páginas fijas, la propia acción) o la verificación falla, la acción se detiene y la rama queda sin fusionar: hay que revisarla en una sesión interactiva.
+
 **Respaldo (solo si el push falla o Vercel no crea el despliegue en unos 5 minutos):** desplegar con `create_deployment` pasando TODOS los archivos fuente en línea (`vercel.json`, `package.json`, `build.mjs`, `scripts/check.mjs`, `static/style.css`, `content/**`). Target `production`, proyecto `telar-blog`. Si falta uno, el build falla con `exited with 1`. Anotar en `docs/registro.md` que se usó el respaldo.
 
 Limitaciones conocidas:

@@ -1,0 +1,65 @@
+name: Publicar artículos de ramas claude/
+
+# Las tareas programadas de Telar no pueden subir a main (sesiones sin supervisión).
+# Suben a una rama claude/<algo>; esta acción valida y la fusiona en main.
+# Vercel publica solo cada push a main.
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-main
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Poner la rama al día con main
+        run: |
+          git config user.name "Telar publicador"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
+
+      - name: Comprobar que solo cambia contenido editorial
+        run: |
+          permitido='^(content/articulos/[^/]+\.md|docs/registro\.md|docs/calendario-editorial\.md|data/geo-log\.csv)$'
+          cambios=$(git diff --name-only origin/main...HEAD)
+          if [ -z "$cambios" ]; then
+            echo "Sin cambios respecto a main: nada que publicar."
+            exit 0
+          fi
+          echo "Archivos cambiados:"
+          echo "$cambios"
+          fuera=$(echo "$cambios" | grep -Ev "$permitido" || true)
+          if [ -n "$fuera" ]; then
+            echo "::error::La rama toca archivos que no se publican de forma automática:"
+            echo "$fuera"
+            exit 1
+          fi
+
+      - name: Validar y compilar
+        run: npm run verify
+
+      - name: Fusionar en main
+        run: |
+          if [ -z "$(git diff --name-only origin/main...HEAD)" ]; then
+            git push origin --delete "${GITHUB_REF_NAME}" || true
+            exit 0
+          fi
+          git push origin HEAD:main
+          git push origin --delete "${GITHUB_REF_NAME}" || true

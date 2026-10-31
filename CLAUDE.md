@@ -45,3 +45,5 @@ Las tareas programadas corren en sesiones nuevas sin archivos locales: deben clo
 Vercel, proyecto `telar-blog`, cuenta santiagostore.06@gmail.com. Pasos y limitaciones en `docs/OPERACIONES.md`.
 
 **Publicación automática desde el 23 de octubre de 2026,** autorizada por el propietario en el chat. Los agentes publican sin pedir permiso y después informan. Sigue vigente la regla 8: lo que no se puede verificar no sale.
+
+**Tareas programadas:** no pueden subir a `main`. Suben a una rama `claude/...` y la acción `publicar-articulos.yml` valida y fusiona (ver `docs/OPERACIONES.md`). Una tarea solo puede dar un artículo por publicado cuando ve el despliegue de producción con su commit en estado READY.
