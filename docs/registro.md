@@ -16,3 +16,4 @@
 | 2026-10-30 | Artículo de Google AI Mode (escrito el 28 de octubre por la tarea programada) publicado desde una sesión interactiva. Cifras reverificadas contra Google/PPC Land/Ahrefs/Search Central/SEJ; corregida una frase sobre Ahrefs que no se sostenía (no advierte que mide correlación) | Publicado |
 | 2026-10-30 | Causa de los artículos sin publicar: las sesiones programadas sin supervisión no tienen `add_repo` (push denegado) y el despliegue directo lo bloquea el control de permisos. Sin despliegues desde el 26 de octubre | Pendiente de decisión del propietario |
 | 2026-10-31 | Prueba de la acción de publicación: rama claude/ fusionada automáticamente en main | Prueba |
+| 2026-10-31 | Prueba: una sesión programada sube una rama claude/ y la acción la fusiona en main | Prueba |
