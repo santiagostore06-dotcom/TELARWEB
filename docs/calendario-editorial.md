@@ -10,6 +10,7 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] Programas de afiliados de herramientas de IA: cómo elegir (2026-10-22)
 - [x] Asistentes de IA para atención al cliente: qué pueden y qué no (2026-10-23)
 - [x] ¿Puede un agente de IA como Claude Duet trabajar por tu pyme en segundo plano? (2026-10-26, tema por tendencia)
+- [x] ¿Qué cambió en los enlaces de Google AI Mode y qué puede hacer un blog pequeño? (2026-10-30, tema por tendencia)
 
 ## Pendientes (en este orden)
 

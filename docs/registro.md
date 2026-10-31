@@ -13,3 +13,5 @@
 | 2026-10-23 | Analítica de Vercel activada en el sitio y declarada en la página de transparencia | Publicado |
 | 2026-10-24 | Publicación automática autorizada. Tarea de artículos reconfigurada: lunes, miércoles y viernes, eligiendo tema desde las tendencias del momento | Hecho |
 | 2026-10-26 | Artículo de Claude Duet publicado vía git push tras adjuntar el repo a la sesión (add_repo). Datos clave verificados contra fuentes | Publicado |
+| 2026-10-30 | Artículo de Google AI Mode (escrito el 28 de octubre por la tarea programada) publicado desde una sesión interactiva. Cifras reverificadas contra Google/PPC Land/Ahrefs/Search Central/SEJ; corregida una frase sobre Ahrefs que no se sostenía (no advierte que mide correlación) | Publicado |
+| 2026-10-30 | Causa de los artículos sin publicar: las sesiones programadas sin supervisión no tienen `add_repo` (push denegado) y el despliegue directo lo bloquea el control de permisos. Sin despliegues desde el 26 de octubre | Pendiente de decisión del propietario |
