@@ -36,6 +36,8 @@ for (const { f, raw } of files) {
     const longQuote = body.split('\n').some((line) => [...line.matchAll(/"([^"]+?)"/g)].some((q) => q[1].split(/\s+/).length >= 15));
     if (longQuote) errors.push(`${f}: cita textual de 15 palabras o más; parafrasea`);
     if (meta.affiliate !== 'si' && /\]\(https?:[^)]*[?&](ref|aff|affiliate|via|partner|utm_source)=/i.test(body)) errors.push(`${f}: enlace con parámetros de afiliado sin "affiliate: si" en el front matter`);
+    if (/ "afiliado"\)/.test(body) && meta.affiliate !== 'si') errors.push(`${f}: enlace marcado "afiliado" sin "affiliate: si" en el front matter`);
+    if (/ "patrocinado"\)/.test(body) && !meta.patrocinado) errors.push(`${f}: enlace marcado "patrocinado" sin "patrocinado: Marca" en el front matter (aviso visible obligatorio)`);
     const words = body.split(/\s+/).length;
     if (words < 700) warns.push(`${f}: solo ${words} palabras (ideal 900 o más)`);
   }

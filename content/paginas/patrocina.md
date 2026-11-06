@@ -1,41 +1,69 @@
 ---
 title: Patrocina Telar
-description: Formatos de colaboración y reglas editoriales para marcas de IA, automatización y software que quieran llegar a lectores de habla hispana.
+description: Kit de medios de Telar: formatos de colaboración, cifras reales del sitio y reglas editoriales para marcas de IA, automatización y software que buscan lectores hispanohablantes.
 ---
 
-> **Telar acaba de lanzarse y no publica cifras de audiencia que todavía no tiene.** Si tu marca encaja con IA y automatización en español, esta es la forma de colaborar. Las condiciones y precios se acuerdan caso por caso mientras el sitio crece.
+> **Telar crea guías de IA y automatización para lectores hispanohablantes.** Somos un medio nuevo: mostramos lo que podemos comprobar y no prometemos alcance que aún no hemos medido.
 
-## A quién queremos como patrocinador
+## Telar en cifras
 
-Herramientas de IA, automatización, productividad, hosting, formación y software para pymes que se dirijan a un público hispanohablante. Nos interesan marcas con producto real que podamos probar.
+{{cifras}}
+
+Las cifras de arriba describen el catálogo, no el tamaño de la audiencia. Las visitas, impresiones, clics y referencias desde buscadores o asistentes se publicarán solo cuando haya datos suficientes, con periodo, fecha y fuente (Vercel Analytics o Google Search Console). No hay tarifas ni resultados de campaña publicados todavía.
+
+## Qué gana tu marca
+
+- **Contenido útil y consultable.** Las guías responden preguntas concretas, enlazan sus fuentes y explican sus límites.
+- **Público objetivo definido.** Escribimos para pymes, creadores y equipos de América Latina interesados en IA y automatización; todavía no publicamos una distribución demográfica propia.
+- **Transparencia comercial.** Identificamos el patrocinio y mantenemos independientes las conclusiones editoriales.
+- **Medición acordada.** Para cada piloto podemos definir enlaces etiquetados y entregar un resumen de las métricas disponibles después de publicar. No garantizamos visitas, ventas ni citas de asistentes.
 
 ## Formatos
 
-- **Reseña patrocinada.** Probamos tu producto y publicamos un análisis con ventajas, límites y alternativas. Marcado como patrocinado.
-- **Guía patrocinada.** Un artículo útil sobre un caso de uso donde tu herramienta es parte de la solución. Marcado como patrocinado.
-- **Mención en artículos relacionados**, con enlace etiquetado.
-- **Programa de afiliados.** Si tu empresa tiene uno, lo evaluamos como cualquier otro.
+| Formato | Qué incluye | Marcado |
+|---|---|---|
+| Reseña patrocinada | Probamos tu producto y publicamos ventajas, límites y alternativas | "Contenido patrocinado" arriba del artículo |
+| Guía patrocinada | Un caso de uso real donde tu herramienta es parte de la solución | "Contenido patrocinado" arriba del artículo |
+| Mención en guías relacionadas | Enlace a tu producto en artículos donde encaja | Enlace marcado como patrocinado |
+| Programa de afiliados | Lo evaluamos como cualquier otro producto | Enlace marcado como afiliado y aviso en el artículo |
+
+## Una forma sencilla de empezar
+
+Proponemos comenzar con una sola pieza y un alcance por escrito: tema y formato, acceso de prueba si hace falta, fecha estimada acordada, enlace etiquetado para atribución y una revisión factual antes de publicar. Al terminar, compartimos las métricas disponibles para esa pieza. No vendemos posiciones en buscadores ni citas de asistentes de IA.
+
+## Cómo funciona
+
+1. Nos escribes con tu marca, tu producto y el formato que te interesa.
+2. Revisamos si encaja con los lectores de Telar. Si no encaja, te lo decimos.
+3. Acordamos el formato y las condiciones por escrito.
+4. Probamos el producto y escribimos. Puedes revisar los datos factuales antes de publicar.
+5. Publicamos con el aviso visible y te compartimos el enlace.
 
 ## Reglas que no se negocian
 
 1. Todo contenido pagado se marca como tal, de forma visible.
 2. El patrocinador no aprueba las conclusiones. Puede corregir errores factuales.
 3. Si el producto no cumple lo que promete, el artículo lo dice o no se publica.
-4. Los enlaces patrocinados llevan el atributo adecuado para buscadores.
+4. Los enlaces pagados llevan `rel="sponsored"` para los buscadores.
+5. Recibir acceso de prueba no obliga a publicar una reseña ni garantiza una valoración positiva.
 
-## Qué puedes esperar de la audiencia
+## A quién buscamos
 
-Hoy, poco más que una promesa: un sitio nuevo, optimizado para que los motores de IA lo citen. Cuando haya datos propios de tráfico y de visitas desde chatbots, los publicaremos aquí con su fecha. Hasta entonces, los acuerdos son de lanzamiento y sin permanencia.
+Herramientas de IA, automatización, productividad, hosting, formación y software que funcionen para un público hispanohablante. Priorizamos productos que podamos evaluar y explicar con evidencia.
 
 ## Cómo contactar
 
-Escribe a [webtelar@gmail.com](mailto:webtelar@gmail.com) con el nombre de tu marca, el producto, el público al que te diriges y el formato que te interesa. También puedes ver la página de [contacto](/contacto/).
+Escribe a [webtelar@gmail.com](mailto:webtelar@gmail.com?subject=Colaboraci%C3%B3n%20con%20Telar) con el nombre de tu marca, el producto, el mercado al que te diriges y el formato que te interesa. También puedes ver la página de [contacto](/contacto/).
 
 ## Preguntas frecuentes
 
 ### ¿Cuánto cuesta patrocinar Telar?
 
-Todavía no hay tarifario público. Mientras el sitio no tenga datos de audiencia, los acuerdos se fijan caso por caso y de forma transparente.
+Todavía no hay tarifario público. Proponemos definir alcance y condiciones para cada piloto, con base en el trabajo requerido y sin prometer resultados de audiencia.
+
+### ¿Por qué patrocinar un blog que recién empieza?
+
+Telar está en etapa de lanzamiento y acepta evaluar pilotos pequeños, con alcance acordado caso por caso. Aún no tenemos datos suficientes para prometer visitas o conversiones; compartiremos los resultados observados, incluso si son modestos.
 
 ### ¿Puedo revisar el artículo antes de que salga?
 
@@ -43,4 +71,4 @@ Puedes revisar los datos factuales sobre tu producto. Las conclusiones y la valo
 
 ### ¿El contenido patrocinado se marca?
 
-Siempre, de forma visible y con enlaces etiquetados como patrocinados.
+Siempre: un aviso arriba del artículo y enlaces etiquetados como patrocinados.

@@ -10,7 +10,7 @@ const SITE = `https://${host.replace(/^https?:\/\//, '')}`;
 const NAME = 'Telar';
 const TAGLINE = 'IA y automatización explicadas en español, con fuentes';
 const EMAIL = 'webtelar@gmail.com';
-const TODAY = '2026-10-23';
+const TODAY = new Date().toISOString().slice(0, 10);
 const GSC = 'OVxaPMKjsAHfpzite3rk5vWS6J8smG6sz4LtKIlotyk';
 
 // Cada tema es un hilo con su propio color, definido en style.css como --c-<clave>.
@@ -51,7 +51,11 @@ function inline(s) {
   return esc(s)
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, u) => (/^(https?:|mailto:)/.test(u) ? `<a href="${u}" rel="noopener">${t}</a>` : `<a href="${u}">${t}</a>`));
+    // [texto](url "patrocinado") o [texto](url "afiliado") marca el enlace como comercial.
+    .replace(/\[([^\]]+)\]\(([^)\s]+)(?: &quot;(patrocinado|afiliado)&quot;)?\)/g, (_, t, u, k) => {
+      if (k) return `<a href="${u}" rel="sponsored nofollow noopener" class="enlace-com">${t}<span class="marca-com"> (${k})</span></a>`;
+      return /^(https?:|mailto:)/.test(u) ? `<a href="${u}" rel="noopener">${t}</a>` : `<a href="${u}">${t}</a>`;
+    });
 }
 
 function parseFront(raw) {
@@ -90,7 +94,7 @@ function table(rows) {
   return `<div class="tabla"><table><thead><tr>${cells(h).map((c) => `<th>${inline(c)}</th>`).join('')}</tr></thead><tbody>${b.map((r) => `<tr>${cells(r).map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>\n`;
 }
 
-const orgLd = { '@type': 'Organization', '@id': `${SITE}/#org`, name: NAME, url: SITE, description: TAGLINE, email: EMAIL, contactPoint: { '@type': 'ContactPoint', email: EMAIL, contactType: 'editorial y colaboraciones', availableLanguage: 'es' } };
+const orgLd = { '@type': 'Organization', '@id': `${SITE}/#org`, name: NAME, url: SITE, logo: `${SITE}/og.png`, description: TAGLINE, email: EMAIL, contactPoint: { '@type': 'ContactPoint', email: EMAIL, contactType: 'editorial y colaboraciones', availableLanguage: 'es' } };
 const faqLd = (faq) => (faq.length ? [{ '@type': 'FAQPage', mainEntity: faq.map((x) => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } })) }] : []);
 
 function layout({ title, desc, path, body, ld = [], type = 'website' }) {
@@ -113,7 +117,12 @@ function layout({ title, desc, path, body, ld = [], type = 'website' }) {
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:locale" content="es_LA">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${SITE}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Telar: IA y automatización explicadas en español, con fuentes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${SITE}/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230A0E1A'/%3E%3Cg fill='%237B8CFF'%3E%3Crect x='3' y='6' width='18' height='2.6' rx='1.3'/%3E%3Crect x='3' y='10.7' width='11' height='2.6' rx='1.3' opacity='.55'/%3E%3Crect x='3' y='15.4' width='15' height='2.6' rx='1.3' opacity='.8'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,7 +135,7 @@ function layout({ title, desc, path, body, ld = [], type = 'website' }) {
 <header class="cab">
   <div class="cab-in">
     <a class="marca" href="/">${hiloM('')}<span>${NAME}</span></a>
-    <nav aria-label="Principal"><a href="/blog/">Artículos</a><a href="/temas/">Temas</a><a href="/recursos/">Recursos</a><a href="/glosario/">Glosario</a><a href="/sobre-telar/">Sobre Telar</a><a class="nav-cta" href="/contacto/">Contacto</a></nav>
+    <nav aria-label="Principal"><a href="/blog/">Artículos</a><a href="/temas/">Temas</a><a href="/recursos/">Recursos</a><a href="/glosario/">Glosario</a><a href="/sobre-telar/">Sobre Telar</a><a href="/patrocina/">Patrocina</a><a class="nav-cta" href="/contacto/">Contacto</a></nav>
   </div>
 </header>
 <main id="contenido">
@@ -158,7 +167,7 @@ const articles = readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => {
   const { meta, body } = parseFront(readFileSync(join(dir, f), 'utf8'));
   const { html, faq, heads } = render(body);
   const words = body.split(/\s+/).length;
-  return { ...meta, pilar: meta.pilar && PILARES[meta.pilar] ? meta.pilar : 'geo', slug: f.replace(/\.md$/, ''), html, faq, heads, minutes: Math.max(3, Math.round(words / 200)) };
+  return { ...meta, words, pilar: meta.pilar && PILARES[meta.pilar] ? meta.pilar : 'geo', slug: f.replace(/\.md$/, ''), html, faq, heads, minutes: Math.max(3, Math.round(words / 200)) };
 }).sort((a, b) => b.date.localeCompare(a.date));
 
 rmSync(OUT, { recursive: true, force: true });
@@ -177,7 +186,7 @@ const card = (a, big = false) => {
 
 for (const a of articles) {
   const ld = [
-    { '@type': 'Article', '@id': `${SITE}/blog/${a.slug}/#art`, headline: a.title, description: a.description, articleSection: PILARES[a.pilar].n, datePublished: a.date, dateModified: a.updated || a.date, inLanguage: 'es', author: { '@id': `${SITE}/#org` }, publisher: { '@id': `${SITE}/#org` }, mainEntityOfPage: `${SITE}/blog/${a.slug}/` },
+    { '@type': 'Article', '@id': `${SITE}/blog/${a.slug}/#art`, headline: a.title, description: a.description, articleSection: PILARES[a.pilar].n, datePublished: a.date, dateModified: a.updated || a.date, inLanguage: 'es', image: `${SITE}/og.png`, wordCount: a.words, author: { '@id': `${SITE}/#org` }, publisher: { '@id': `${SITE}/#org` }, mainEntityOfPage: `${SITE}/blog/${a.slug}/` },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Inicio', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Artículos', item: SITE + '/blog/' }, { '@type': 'ListItem', position: 3, name: a.title, item: `${SITE}/blog/${a.slug}/` }] },
     ...faqLd(a.faq),
   ];
@@ -185,7 +194,7 @@ for (const a of articles) {
   const toc = a.heads.length ? `<aside class="toc" aria-label="En este artículo"><p class="toc-t">En este artículo</p><ol>${a.heads.map((h) => `<li><a href="#${h.id}">${esc(h.t)}</a></li>`).join('')}</ol></aside>` : '';
   put(`blog/${a.slug}/index.html`, layout({
     title: a.title, desc: a.description, path: `/blog/${a.slug}/`, type: 'article', ld,
-    body: `<div class="art-wrap p-${a.pilar}"><article class="art"><header><p class="meta">${chip(a.pilar)}<span><time datetime="${a.date}">${fmtDate(a.date)}</time></span><span>${a.minutes} min de lectura</span>${a.updated ? `<span>Actualizado ${fmtDate(a.updated)}</span>` : ''}</p><h1>${esc(a.title)}</h1><p class="firma">Por el equipo de Telar, con ayuda de IA y supervisión humana. <a href="/transparencia/">Cómo trabajamos</a></p></header><div class="cuerpo">${a.html}</div>${a.affiliate === 'si' ? '<p class="aviso">Este artículo menciona herramientas con programa de afiliados. Aun así, el criterio es editorial. Detalles en <a href="/transparencia/">transparencia</a>.</p>' : ''}<p class="aviso">¿Viste un error o tienes un dato mejor? Escribe a <a href="mailto:${EMAIL}">${EMAIL}</a> y lo corregimos con fecha visible.</p></article>${toc}</div><section class="mas"><h2>Sigue leyendo</h2><div class="rejilla">${rel.map((x) => card(x)).join('')}</div></section>`,
+    body: `<div class="art-wrap p-${a.pilar}"><article class="art"><header><p class="meta">${chip(a.pilar)}<span><time datetime="${a.date}">${fmtDate(a.date)}</time></span><span>${a.minutes} min de lectura</span>${a.updated ? `<span>Actualizado ${fmtDate(a.updated)}</span>` : ''}</p><h1>${esc(a.title)}</h1><p class="firma">Por el equipo de Telar, con ayuda de IA y supervisión humana. <a href="/transparencia/">Cómo trabajamos</a></p>${a.patrocinado ? `<p class="aviso-patro"><strong>Contenido patrocinado por ${esc(a.patrocinado)}.</strong> La marca pagó por esta guía, pero no aprobó sus conclusiones. <a href="/transparencia/">Cómo trabajamos</a></p>` : ''}</header><div class="cuerpo">${a.html}</div>${a.affiliate === 'si' ? '<p class="aviso">Este artículo menciona herramientas con programa de afiliados. Aun así, el criterio es editorial. Detalles en <a href="/transparencia/">transparencia</a>.</p>' : ''}<p class="aviso">¿Viste un error o tienes un dato mejor? Escribe a <a href="mailto:${EMAIL}">${EMAIL}</a> y lo corregimos con fecha visible.</p></article>${toc}</div><section class="mas"><h2>Sigue leyendo</h2><div class="rejilla">${rel.map((x) => card(x)).join('')}</div></section>`,
   }));
 }
 
@@ -223,11 +232,20 @@ put('index.html', layout({
 }));
 
 // ---------- páginas fijas ----------
+// Cifras calculadas del propio contenido en cada build: nada se escribe a mano.
+const fuentes = new Set(); let preguntasTot = 0;
+for (const f of readdirSync(dir).filter((x) => x.endsWith('.md'))) {
+  const raw = readFileSync(join(dir, f), 'utf8');
+  for (const m of raw.matchAll(/\]\((https?:\/\/[^)\s]+)/g)) fuentes.add(m[1]);
+}
+articles.forEach((a) => { preguntasTot += a.faq.length; });
+const ultima = articles[0];
+const cifras = `<div class="cifras"><div><strong>${articles.length}</strong><span>guías publicadas</span></div><div><strong>${fuentes.size}</strong><span>enlaces externos a fuentes</span></div><div><strong>${preguntasTot}</strong><span>preguntas frecuentes respondidas</span></div><div><strong>${Object.keys(PILARES).length}</strong><span>temas editoriales</span></div></div><p class="chico">Conteo del catálogo al ${fmtDate(TODAY)}; no representa audiencia ni resultados comerciales. Última guía: <a href="/blog/${ultima.slug}/">${esc(ultima.title)}</a>.</p>`;
 const pages = readdirSync(join(ROOT, 'content', 'paginas')).filter((f) => f.endsWith('.md'));
 const pageList = [];
 for (const f of pages) {
   const { meta, body } = parseFront(readFileSync(join(ROOT, 'content', 'paginas', f), 'utf8'));
-  const { html, faq, terms } = render(body);
+  const r = render(body); const { faq, terms } = r; const html = r.html.replace('<p>{{cifras}}</p>', cifras);
   const s = f.replace(/\.md$/, '');
   pageList.push(s);
   const ld = [...faqLd(faq)];
@@ -262,7 +280,7 @@ Allow: /
 Sitemap: ${SITE}/sitemap.xml
 `);
 const urls = ['/', '/blog/', '/temas/', ...Object.keys(PILARES).map((k) => `/temas/${k}/`), ...pageList.map((p) => `/${p}/`), ...articles.map((a) => `/blog/${a.slug}/`)];
-put('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>${TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+put('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => { const a = articles.find((x) => `/blog/${x.slug}/` === u); return `<url><loc>${SITE}${u}</loc><lastmod>${a ? a.updated || a.date : TODAY}</lastmod></url>`; }).join('\n')}\n</urlset>\n`);
 put('rss.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>${NAME}</title><link>${SITE}</link><description>${esc(TAGLINE)}</description><language>es</language>\n${articles.map((a) => `<item><title>${esc(a.title)}</title><link>${SITE}/blog/${a.slug}/</link><guid>${SITE}/blog/${a.slug}/</guid><pubDate>${new Date(a.date + 'T12:00:00Z').toUTCString()}</pubDate><description>${esc(a.description)}</description></item>`).join('\n')}\n</channel></rss>\n`);
 put('llms.txt', `# ${NAME}\n\n> ${TAGLINE}. Blog en español para LATAM. Cada dato cita su fuente.\n\n## Artículos\n\n${articles.map((a) => `- [${a.title}](${SITE}/blog/${a.slug}/): ${a.description}`).join('\n')}\n\n## Temas\n\n${Object.keys(PILARES).map((k) => `- [${PILARES[k].n}](${SITE}/temas/${k}/): ${PILARES[k].d}`).join('\n')}\n\n## Preguntas frecuentes respondidas\n\n${preguntas.map((p) => `- [${p.q}](${SITE}${p.href})`).join('\n')}\n\n## Información\n\n- [Recursos](${SITE}/recursos/): lista de verificación GEO\n- [Glosario](${SITE}/glosario/): términos de IA, GEO y afiliados\n- [Sobre Telar](${SITE}/sobre-telar/): quién publica y cómo se trabaja\n- [Transparencia](${SITE}/transparencia/): afiliados, patrocinios, analítica y política editorial\n- [Patrocina](${SITE}/patrocina/): formatos de colaboración\n- [Contacto](${SITE}/contacto/): ${EMAIL}\n`);
 put('404.html', layout({ title: 'Página no encontrada', desc: 'La página que buscas no existe.', path: '/404', body: `<section class="art solo"><h1>No encontramos esa página</h1><div class="cuerpo"><p>Puede que el enlace haya cambiado. Vuelve al <a href="/">inicio</a>, mira los <a href="/temas/">temas</a> o todos los <a href="/blog/">artículos</a>.</p></div></section>` }));
