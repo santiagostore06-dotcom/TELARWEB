@@ -4,13 +4,13 @@ Documento interno (no se publica). Revisado el 2026-11-07. Las condiciones cambi
 
 ## Estado
 
-- Afiliados activos: **ninguno**. Patrocinios: **ninguno**. Ingresos: **0**.
+- Afiliados activos: **Systeme.io** (alta 2026-11-07 con webtelar@gmail.com; enlace `https://systeme.io/?sa=sa028584367024ac799f68646871eaadb529dd625d`; método de cobro aún sin configurar). Aún no usado en ningún artículo. Patrocinios: **ninguno**. Ingresos: **0**.
 - Tráfico (Search Console, 6 nov 2026): 0-4 impresiones/día, 0 clics. Citación GEO: 0 de 25 consultas.
 - Consecuencia: hoy un patrocinio pagado es poco probable. El camino más corto a ingresos son afiliados recurrentes de herramientas que encajan con los pilares, más contenido útil que las compare con honestidad.
 
-## Pendiente de aprobación del propietario (regla 6)
+## Aprobación del propietario (regla 6)
 
-Aplicar a programas = enviar formularios. Necesita el "sí" del propietario en el chat, una vez, para la lista A. Datos que pedirá cada programa: nombre, correo, país (Colombia), sitio, y casi todos pagan vía PartnerStack o PayPal (cuenta del propietario).
+El propietario aprobó en el chat el 2026-11-07 aplicar a los programas de la lista A. Datos que pedirá cada programa: nombre, correo, país (Colombia), sitio, y casi todos pagan vía PartnerStack o PayPal (cuenta del propietario).
 
 ## Lista A: afiliados prioritarios (encajan con pilares 2 y 3)
 
@@ -52,3 +52,10 @@ Prioridad en el calendario (ver `calendario-editorial.md`):
 4. Cómo conseguir tu primer patrocinador con un blog nuevo.
 
 Regla: un artículo puede nombrar herramientas sin ser afiliado. Al activar un afiliado, se añade `affiliate: si`, el aviso y `rel="sponsored"`; nunca antes.
+
+## Cobro desde Colombia (investigado 2026-11-07)
+
+- PartnerStack (n8n, Manychat, ElevenLabs) paga por PayPal, Stripe o depósito vía Airwallex según país; no se confirmó si Colombia tiene depósito directo, y su ayuda dice que no admite bancos virtuales ni cuentas en moneda extranjera para PayPal ([PartnerStack](https://support.partnerstack.com/hc/it/articles/360009377934)).
+- Systeme.io paga por PayPal o transferencia bancaria, el día 10 de cada mes, mínimo 30 USD ([Systeme.io](https://systeme.io/affiliate-program), [ayuda](https://help.systeme.io/article/2102-how-to-add-a-method-for-receiving-commissions)).
+- PayPal en Colombia: retiro a cuentas locales como Bancolombia o Davivienda, y a Nequi ([La República](https://www.larepublica.co/finanzas-personales/asi-puede-transferir-dinero-desde-paypal-a-un-banco-colombiano-para-hacer-retiros-3339843), [Portafolio](https://www.portafolio.co/negocios/usuarios-de-nequi-podran-retirar-dinero-a-traves-de-paypal-521523)).
+- Nu Colombia y Lulo Bank: no se encontró confirmación de que reciban retiros de PayPal ni transferencias internacionales. Ruta recomendada: PayPal a nombre del propietario, retirado a Bancolombia o Nequi.
