@@ -12,6 +12,13 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] ¿Puede un agente de IA como Claude Duet trabajar por tu pyme en segundo plano? (2026-10-26, tema por tendencia)
 - [x] ¿Qué cambió en los enlaces de Google AI Mode y qué puede hacer un blog pequeño? (2026-10-30, tema por tendencia)
 
+## Prioridad comercial (escribir primero, ver docs/MONETIZACION.md)
+
+- [ ] Cómo elegir entre Zapier, Make y n8n: criterios y límites
+- [ ] Cómo automatizar respuestas de WhatsApp e Instagram para una pyme: herramientas y límites
+- [ ] Cinco tareas de una pyme que conviene automatizar primero, con cómo medir el ahorro
+- [ ] Cómo conseguir tu primer patrocinador con un blog nuevo
+
 ## Pendientes (en este orden)
 
 Pilar 1, GEO y búsqueda con IA
@@ -20,8 +27,6 @@ Pilar 1, GEO y búsqueda con IA
 - [ ] AEO frente a SEO: qué cambia al escribir para respuestas de IA
 
 Pilar 2, IA y automatización para pymes
-- [ ] Cinco tareas de una pyme que conviene automatizar primero, con cómo medir el ahorro
-- [ ] Cómo elegir entre Zapier, Make y n8n: criterios y límites
 - [ ] Privacidad al usar IA en el trabajo: qué datos no compartir y política mínima
 
 Pilar 3, herramientas y flujos
@@ -29,7 +34,6 @@ Pilar 3, herramientas y flujos
 - [ ] Prompts que ahorran tiempo en tareas administrativas, con ejemplos
 
 Pilar 4, monetización de blogs y creadores
-- [ ] Cómo conseguir tu primer patrocinador con un blog nuevo
 - [ ] Declarar afiliados y patrocinios: buenas prácticas y qué exige la norma en cada país (verificar normas)
 - [ ] Cuánto tarda un blog nuevo en ganar autoridad: lo que dicen los datos
 
