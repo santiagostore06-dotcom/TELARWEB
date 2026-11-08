@@ -68,4 +68,5 @@ Revisar los artículos pilar: abrir las fuentes, ver si cambió alguna cifra, ac
 
 - **El build falla:** leer el error de `node build.mjs`; casi siempre es un front matter mal formado o un enlace con paréntesis sin cerrar.
 - **El despliegue falla:** revisar el estado con `get_deployment` y los eventos de build.
-- **El sitio no carga:** comprobar el alias `telar-blog.vercel.app` en Vercel.
+- **Dominio de producción:** `https://www.blogtelar.lat/` es el canónico; `https://blogtelar.lat/` redirige a `www`. `telar-blog.vercel.app` sigue disponible como alias técnico.
+- **El sitio no carga:** comprobar los dominios `blogtelar.lat` y `www.blogtelar.lat` en Vercel.

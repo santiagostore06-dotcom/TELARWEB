@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, 'dist');
-const host = process.env.SITE_HOST || process.env.VERCEL_PROJECT_PRODUCTION_URL || 'telar-blog.vercel.app';
+// Dominio canónico: el dominio raíz redirige a www.blogtelar.lat en Vercel.
+const host = process.env.SITE_HOST || 'www.blogtelar.lat';
 const SITE = `https://${host.replace(/^https?:\/\//, '')}`;
 const NAME = 'Telar';
 const TAGLINE = 'IA y automatización explicadas en español, con fuentes';
