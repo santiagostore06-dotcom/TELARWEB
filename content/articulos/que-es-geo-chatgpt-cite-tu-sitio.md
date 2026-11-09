@@ -23,7 +23,7 @@ Conviene leer esas cifras con cautela. Salen de un benchmark académico, no de t
 ## Qué ha cambiado en 2026
 
 - **Google publicó su primera guía oficial** sobre cómo optimizar para IA generativa, en mayo de 2026, según [Frase](https://www.frase.io/blog/what-is-generative-engine-optimization-geo).
-- **Cada motor funciona distinto.** ChatGPT Search recupera páginas a través de Bing, mientras que Google AI Overviews usa el índice de Google. Perplexity y Claude muestran las fuentes de forma más visible que ChatGPT y Gemini.
+- **Cada motor funciona distinto.** ChatGPT Search recupera páginas a través de Bing, mientras que Google AI Overviews usa el índice de Google. En octubre Google cambió cómo muestra los enlaces en esas respuestas: lo explicamos en [qué cambió en los enlaces de Google AI Mode](/blog/google-ai-mode-enlaces-cambios-octubre-2026-blog-pequeno/). Perplexity y Claude muestran las fuentes de forma más visible que ChatGPT y Gemini.
 - **Estar en el top 10 de Google no basta.** Un benchmark de ConvertMate, citado por [Rank AI](https://rankai.ai/articles/how-to-do-geo), afirma que el 83 % de las citas de AI Overviews proviene de páginas fuera de los diez primeros resultados. Es un dato de un proveedor del sector y no lo hemos verificado de forma independiente.
 
 ## Siete tácticas con respaldo razonable

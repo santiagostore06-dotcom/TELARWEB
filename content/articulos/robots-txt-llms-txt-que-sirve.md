@@ -1,6 +1,6 @@
 ---
 title: robots.txt y llms.txt: qué sirve de verdad para los rastreadores de IA
-description: Qué controla cada archivo, qué rastreadores de IA existen y qué dicen los datos de 2026 sobre si llms.txt se lee o no.
+description: Qué controlan robots.txt y llms.txt, qué rastreadores de IA (GPTBot, ClaudeBot, PerplexityBot) conviene permitir y qué dicen los datos de 2026 sobre llms.txt.
 date: 2026-10-22
 pilar: geo
 ---
