@@ -12,10 +12,10 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] ¿Puede un agente de IA como Claude Duet trabajar por tu pyme en segundo plano? (2026-10-26, tema por tendencia)
 - [x] ¿Qué cambió en los enlaces de Google AI Mode y qué puede hacer un blog pequeño? (2026-10-30, tema por tendencia)
 - [x] Zapier, Make o n8n: cómo elegir sin pagar de más (2026-11-09, prioridad comercial)
+- [x] Cómo automatizar las respuestas de WhatsApp e Instagram en una pyme: herramientas y límites (2026-11-13, prioridad comercial)
 
 ## Prioridad comercial (escribir primero, ver docs/MONETIZACION.md)
 
-- [ ] Cómo automatizar respuestas de WhatsApp e Instagram para una pyme: herramientas y límites
 - [ ] Cinco tareas de una pyme que conviene automatizar primero, con cómo medir el ahorro
 - [ ] Cómo conseguir tu primer patrocinador con un blog nuevo
 
