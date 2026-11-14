@@ -16,6 +16,7 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] Cinco tareas de una pyme que conviene automatizar primero, y cómo medir el ahorro (2026-11-13, prioridad comercial)
 - [x] Cómo conseguir tu primer patrocinador con un blog nuevo (2026-11-13, prioridad comercial)
 - [x] Cómo medir si ChatGPT, Claude y Perplexity citan tu sitio, con una hoja de cálculo semanal (2026-11-14, pendiente pilar 1)
+- [x] Privacidad al usar IA en el trabajo: qué datos no compartir y una política mínima para tu equipo (2026-11-14, pendiente pilar 2)
 
 ## Prioridad comercial (escribir primero, ver docs/MONETIZACION.md)
 
@@ -27,7 +28,6 @@ Pilar 1, GEO y búsqueda con IA
 - [ ] AEO frente a SEO: qué cambia al escribir para respuestas de IA
 
 Pilar 2, IA y automatización para pymes
-- [ ] Privacidad al usar IA en el trabajo: qué datos no compartir y política mínima
 
 Pilar 3, herramientas y flujos
 - [ ] Cómo automatizar un flujo de facturación o cotizaciones paso a paso (solo con herramientas probadas)
