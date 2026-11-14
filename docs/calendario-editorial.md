@@ -14,10 +14,10 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] Zapier, Make o n8n: cómo elegir sin pagar de más (2026-11-09, prioridad comercial)
 - [x] Cómo automatizar las respuestas de WhatsApp e Instagram en una pyme: herramientas y límites (2026-11-13, prioridad comercial)
 - [x] Cinco tareas de una pyme que conviene automatizar primero, y cómo medir el ahorro (2026-11-13, prioridad comercial)
+- [x] Cómo conseguir tu primer patrocinador con un blog nuevo (2026-11-13, prioridad comercial)
 
 ## Prioridad comercial (escribir primero, ver docs/MONETIZACION.md)
 
-- [ ] Cómo conseguir tu primer patrocinador con un blog nuevo
 
 ## Pendientes (en este orden)
 
