@@ -3,5 +3,13 @@
   "outputDirectory": "dist",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "telar-blog.vercel.app" }],
+      "destination": "https://www.blogtelar.lat/:path*",
+      "permanent": true
+    }
+  ]
 }
