@@ -15,6 +15,7 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] Cómo automatizar las respuestas de WhatsApp e Instagram en una pyme: herramientas y límites (2026-11-13, prioridad comercial)
 - [x] Cinco tareas de una pyme que conviene automatizar primero, y cómo medir el ahorro (2026-11-13, prioridad comercial)
 - [x] Cómo conseguir tu primer patrocinador con un blog nuevo (2026-11-13, prioridad comercial)
+- [x] Cómo medir si ChatGPT, Claude y Perplexity citan tu sitio, con una hoja de cálculo semanal (2026-11-14, pendiente pilar 1)
 
 ## Prioridad comercial (escribir primero, ver docs/MONETIZACION.md)
 
@@ -22,7 +23,6 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 ## Pendientes (en este orden)
 
 Pilar 1, GEO y búsqueda con IA
-- [ ] Cómo medir si ChatGPT, Claude y Perplexity te citan: método semanal con hoja de cálculo
 - [ ] Datos estructurados para blogs: Article, FAQPage y qué sí leen los buscadores
 - [ ] AEO frente a SEO: qué cambia al escribir para respuestas de IA
 
