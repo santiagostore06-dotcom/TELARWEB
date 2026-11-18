@@ -18,6 +18,7 @@ Marca con [x] lo publicado. Cada tema exige investigación nueva con fuentes act
 - [x] Cómo medir si ChatGPT, Claude y Perplexity citan tu sitio, con una hoja de cálculo semanal (2026-11-14, pendiente pilar 1)
 - [x] Privacidad al usar IA en el trabajo: qué datos no compartir y una política mínima para tu equipo (2026-11-14, pendiente pilar 2)
 - [x] Datos estructurados para blogs: Article, FAQPage y qué sí muestra Google (2026-11-16, pendiente pilar 1)
+- [x] Cómo evitar que un chatbot de atención invente respuestas: base de conocimiento, límites y escalamiento (2026-11-18, lote ampliado pilar 2)
 
 ## Lote ampliado (añadido 2026-11-17)
 
@@ -29,7 +30,6 @@ Pilar 1, GEO y búsqueda con IA
 - [ ] Cómo verificar y enviar un sitio nuevo a Search Console y Bing Webmaster Tools, paso a paso, con el caso de un dominio propio recién conectado. Ángulo: caso real de Telar (dominio con redirección 308, propiedad de dominio por TXT en DNS). Fuente a abrir: ayuda oficial de Search Console y de Bing Webmaster.
 
 Pilar 2, IA y automatización para pymes
-- [ ] Cómo hacer que un chatbot de atención no invente respuestas: base de conocimiento, límites y escalamiento a una persona. Ángulo: lista de comprobación con una prueba de 20 preguntas que el lector puede repetir. Fuente a abrir: documentación oficial de la herramienta usada; sin cifras de mejora salvo estudios enlazados.
 - [ ] Qué exige la Ley 1581 de 2012 en Colombia al usar datos de clientes con herramientas de IA. Ángulo: una pyme que usa un CRM o chatbot, y qué debe tener por escrito. Fuente a abrir: texto de la ley en el sitio oficial (Secretaría del Senado o SIC); aclarar que no es asesoría legal y no incluir otros países sin revisarlos.
 - [ ] Cuánto cuesta realmente automatizar con IA en una pyme: costo de herramienta, uso por tarea y tiempo de montaje. Ángulo: tabla de costos de 3 herramientas con sus páginas de precios y fecha de consulta. Fuente a abrir: páginas oficiales de precios; omitir el plan cuya página no se pueda leer.
 
